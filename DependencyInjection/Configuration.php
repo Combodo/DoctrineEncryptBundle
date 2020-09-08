@@ -20,8 +20,13 @@ class Configuration implements ConfigurationInterface {
     public function getConfigTreeBuilder() {
 
         //Create tree builder
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('combodo_doctrine_encrypt');
+        if (method_exists(TreeBuilder::class, 'getRootNode')) {
+            $treeBuilder = new TreeBuilder('combodo_doctrine_encrypt');
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            $treeBuilder = new TreeBuilder();
+            $rootNode = $treeBuilder->root('combodo_doctrine_encrypt');
+        }
 
         // Grammar of config tree
         $rootNode

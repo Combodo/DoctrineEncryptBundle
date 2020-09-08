@@ -3,10 +3,10 @@
     "type": "library",
     "keywords": ["doctrine", "symfony", "aes256", "openssl", "encrypt", "decrypt", "bundle"],
     "license": "MIT",
-    "description": "Symfony 2 bundle which allows to encrypt data in database with some encrypt algorithm, this fork make use of open ssl",
+    "description": "Symfony 3+ bundle which allows to encrypt data in database with some encrypt algorithm, this fork make use of open ssl",
     "require": {
-        "php": ">=5.4",
-        "symfony/framework-bundle": ">=2.5",
+        "php": "^5.5.9|^7.1.3",
+        "symfony/framework-bundle": "^3.4|^4.4",
         "doctrine/orm": ">=2.5",
         "ext-openssl": "*"
     },
