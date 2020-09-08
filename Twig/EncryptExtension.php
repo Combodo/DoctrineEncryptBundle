@@ -5,7 +5,7 @@ namespace Combodo\DoctrineEncryptBundle\Twig;
 use Combodo\DoctrineEncryptBundle\Services\EncryptorInterface;
 
 
-class EncryptExtension extends \Twig_Extension
+class EncryptExtension extends \Twig\Extension\AbstractExtension
 {
 
     private $encryptor;
@@ -19,7 +19,7 @@ class EncryptExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('decrypt', [$this,'decrypt'], [
+            new \Twig\TwigFilter('decrypt', [$this,'decrypt'], [
                 //'is_safe' => ['html'],//to avoid autoescaping of HTML
             ]),
 
